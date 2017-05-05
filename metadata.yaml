@@ -1,0 +1,12 @@
+name: lounge-irc
+summary: The self-hosted web IRC client
+maintainer: Marco Ceppi <marco@ceppi.net>
+description: |
+  <Multi-line description here>
+tags:
+  - irc
+series:
+  - xenial
+provides:
+  website:
+    interface: http

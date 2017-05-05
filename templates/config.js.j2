@@ -1,0 +1,35 @@
+module.exports = {
+	public: {{ public }},
+	host: "0.0.0.0",
+	port: 80,
+	bind: undefined,
+	theme: "themes/example.css",
+	autoload: true,
+	prefetch: false,
+	prefetchMaxImageSize: 512,
+	displayNetwork: true,
+	logs: {
+		format: "YYYY-MM-DD HH:mm:ss",
+		timezone: "UTC+00:00"
+	},
+	defaults: {
+		name: "Freenode",
+		host: "irc.freenode.org",
+		port: 6697,
+		password: "",
+		tls: true,
+		nick: "lounge-user",
+		username: "lounge-user",
+		join: "#juju, #thelounge"
+	},
+	transports: ["polling", "websocket"],
+	https: {
+		enable: false,
+		key: "",
+		certificate: ""
+	},
+	identd: {
+		enable: false,
+		port: 113
+	}
+};

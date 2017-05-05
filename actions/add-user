@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+import sys
+sys.path.append('hooks')
+sys.path.append('lib')
+
+from charms.layer.lounge import Lounge
+from charms.layer.nodejs import node_dist_dir
+
+from charmhelpers.core.hookenv import (
+    action_get,
+    action_fail,
+)
+
+lounge = Lounge(node_dist_path())
+
+try:
+    lounge.add(action_get('name'), action_get('password'))
+except Exception as e:
+    action_fail("%s" % e)

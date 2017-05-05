@@ -1,0 +1,4 @@
+includes:
+  - layer:nodejs
+  - interface:http
+repo: "https://github.com/jamesbeedy/layer-lounge"

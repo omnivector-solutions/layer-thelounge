@@ -1,0 +1,19 @@
+add-user:
+  description: add new user to lounge
+  params:
+    name:
+      description: username
+      type: string
+    password:
+      description: password
+      type: string
+  required: [name, password]
+remove-user:
+  description: remove user from lounge
+  params:
+    name:
+      description: username
+      type: string
+  required: [name]
+list-users:
+  description: list all users in lounge

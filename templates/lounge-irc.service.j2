@@ -1,0 +1,11 @@
+[Unit]
+Description=Lounge IRC
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/lounge start --home {{ home }}
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
