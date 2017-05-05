@@ -1,52 +1,20 @@
-# layer-node
-> Juju charms.reactive layer for NodeJS
+# Lounge IRC
+This charm provides Lounge IRC, the self-hosted web IRC client.
 
-# emitters
-
-**nodejs.available** - This state is automatically emitted once Node.js has been
-installed. Rely on this state to perform an application deployment when Node.js
-is ready to be used.
-
-# api
-
-All helper modules are found in `lib/nodejs.py`
-
-Example,
-
-```python
-
-from nodejs import npm, node_dist_dir
-
-print(node_dist_dir())
-# /srv/app
-
-@when('nodejs.available')
-def install_deps():
-    npm('install')
-    npm('test')
-
+# Simple Deploy
+```bash
+juju deploy lounge-irc
 ```
 
-# license
+# Deploy with reverse proxy
+```bash
+juju deploy haproxy
+juju deploy lounge-irc
+juju relate lounge-irc haproxy
+```
 
-The MIT License (MIT)
+### License
 
-Copyright (c) 2015 Adam Stokes <adam.stokes@ubuntu.com>
+The MIT License (MIT) (see copyright file in this directory)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Copyright (c) 2017 James Beedy <jamesbeedy@gmail.com>

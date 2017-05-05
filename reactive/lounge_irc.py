@@ -19,7 +19,7 @@ from charms.layer.nodejs import npm, node_dist_dir
 @when_not('lounge-irc.installed')
 def install_lounge():
     status_set('maintenance', 'installing lounge-irc')
-    npm(['-g', 'install', 'thelounge'])
+    npm('-g', 'install', 'thelounge')
 
     render(
         source='config.js.j2',
