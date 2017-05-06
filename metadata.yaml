@@ -1,8 +1,8 @@
 name: lounge-irc
 summary: The self-hosted web IRC client
-maintainer: Marco Ceppi <marco@ceppi.net>
+maintainer: James Beedy <jamesbeedy@gmail.com>
 description: |
-  <Multi-line description here>
+  The Lounge is a modern web IRC client designed for self-hosting.
 tags:
   - irc
 series:

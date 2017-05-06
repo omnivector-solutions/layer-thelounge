@@ -34,6 +34,10 @@ juju run-action lounge-irc/0 list-users
 juju run-action lounge-irc/0 remove-user name=myuser
 ```
 
+## Authors
+* Marco Ceppi <marco@ceppi.net>
+* James Beedy <jamesbeedy@gmail.com>
+
 ### License
 
 The MIT License (MIT) (see copyright file in this directory)
