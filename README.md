@@ -3,13 +3,13 @@ This charm provides Lounge IRC, the self-hosted web IRC client.
 
 # Simple Deploy
 1. Deploy the charm!
-```bash
-juju deploy lounge-irc
-```
+  ```bash
+  juju deploy lounge-irc
+  ```
 2. Add a user 
-```bash
-juju run-action lounge-irc/0 add-user name=myname password=mypassword
-```
+  ```bash
+  juju run-action lounge-irc/0 add-user name=myname password=mypassword
+  ```
 3. Login to the webui with the user creds created in #2
 
 
@@ -21,7 +21,6 @@ juju relate lounge-irc haproxy
 ```
 
 # User Lifecycle
-You mu
 This charm ships with a few user management lifecycle actions:
 ```bash
 # Add User
