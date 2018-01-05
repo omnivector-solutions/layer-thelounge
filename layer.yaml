@@ -1,4 +1,14 @@
 includes:
-  - layer:nodejs
+  - layer:basic
+  - layer:snap
   - interface:http
-repo: "https://github.com/jamesbeedy/layer-lounge"
+options:
+  snap:
+    thelounge:
+      channel: stable
+      devmode: false
+      jailmode: false
+      dangerous: true
+      classic: false
+      revision: null
+repo: "https://github.com/omnivector-solutions/layer-thelounge"

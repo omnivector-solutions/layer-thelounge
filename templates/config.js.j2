@@ -1,35 +1,49 @@
 module.exports = {
-	public: {{ public }},
-	host: "0.0.0.0",
-	port: 80,
-	bind: undefined,
-	theme: "themes/example.css",
-	autoload: true,
-	prefetch: false,
-	prefetchMaxImageSize: 512,
-	displayNetwork: true,
-	logs: {
-		format: "YYYY-MM-DD HH:mm:ss",
-		timezone: "UTC+00:00"
-	},
-	defaults: {
-		name: "Freenode",
-		host: "irc.freenode.org",
-		port: 6697,
-		password: "",
-		tls: true,
-		nick: "lounge-user",
-		username: "lounge-user",
-		join: "#juju, #thelounge"
-	},
-	transports: ["polling", "websocket"],
-	https: {
-		enable: false,
-		key: "",
-		certificate: ""
-	},
-	identd: {
-		enable: false,
-		port: 113
-	}
+    public: {{ public }},
+    host: "0.0.0.0",
+    port: {{ port }},
+    bind: undefined,
+    reverseProxy: false,
+    theme: "example",
+    prefetch: true,
+    prefetchStorage: true,
+    prefetchMaxImageSize: 2048,
+    displayNetwork: true,
+    lockNetwork: false,
+    useHexIp: false,
+    webirc: null,
+    logs: {
+        format: "YYYY-MM-DD HH:mm:ss",
+        timezone: "UTC+00:00",
+    },
+
+    maxHistory: 100000,
+
+    defaults: {
+        name: "Freenode",
+        host: "chat.freenode.net",
+        port: 6697,
+        password: "",
+        tls: true,
+        nick: "lounge-user",
+        username: "lounge-user",
+        realname: "The Lounge User",
+        join: "#thelounge",
+    },
+
+    transports: ["polling", "websocket"],
+
+    leaveMessage: "The Lounge - https://thelounge.github.io",
+
+    identd: {
+        enable: false,
+        port: 113,
+    },
+
+    oidentd: null,
+
+    debug: {
+        ircFramework: false,
+        raw: false,
+    },
 };
