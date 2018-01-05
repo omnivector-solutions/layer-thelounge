@@ -1,10 +1,14 @@
 options:
+  reverseproxy:
+    description: whether or not a reverse proxy will be used
+    default: true
+    type: boolean
   public:
     description: require login or make a public accessible irc bouncer
-    default: false
+    default: true
     type: boolean
   port:
-    default: 80
+    default: 9000
     description: |
       Port to run shout on
     type: int
