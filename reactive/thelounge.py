@@ -37,7 +37,7 @@ def configure_thelounge():
         target=os.path.join(LOUNGE_HOME, 'config.js'),
         context={
             'public': 'true' if config('public') else 'false',
-            'proxy': 'true' if config('proxy') else 'false',
+            'proxy': 'true' if config('reverseproxy') else 'false',
             'port': config('port')
         },
     )
