@@ -11,7 +11,7 @@ provides:
   http:
     interface: http
 resources:
-  thelounge:
+  theloungeirc:
     type: file
-    filename: thelounge.snap
+    filename: theloungeirc.snap
     description: thelounge IRC snap

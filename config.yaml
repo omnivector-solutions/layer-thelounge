@@ -5,7 +5,7 @@ options:
     type: boolean
   public:
     description: require login or make a public accessible irc bouncer
-    default: true
+    default: false
     type: boolean
   port:
     default: 9000

@@ -24,10 +24,10 @@ from charmhelpers.core.templating import render
 
 
 LOUNGE_HOME = os.path.join(
-    '/', 'var', 'snap', 'thelounge', 'common', 'etc', 'thelounge')
+    '/', 'var', 'snap', 'theloungeirc', 'common', 'etc', 'thelounge')
 
 
-@when('snap.installed.thelounge')
+@when('snap.installed.theloungeirc')
 @when_not('thelounge.available')
 def configure_thelounge():
     status_set('maintenance', 'Configuring thelounge irc')
@@ -48,11 +48,12 @@ def configure_thelounge():
         context={}
     )
 
-    if host.service_running('snap.thelounge.thelounge'):
-        host.service_restart('snap.thelounge.thelounge')
+    if host.service_running('snap.theloungeirc.thelounge'):
+        host.service_restart('snap.theloungeirc.thelounge')
     else:
-        host.service_start('snap.thelounge.thelounge')
+        host.service_start('snap.theloungeirc.thelounge')
 
+    application_version_set(lounge_version())
     update()
 
     set_flag('thelounge.available')
@@ -78,7 +79,7 @@ def close_lounge_port():
 
 @hook('update-status')
 def update():
-    extra = 'running' if host.service_running('snap.thelounge.thelounge') else 'stopped'
+    extra = 'running' if host.service_running('snap.theloungeirc.thelounge') else 'stopped'
     status_set('active', 'version %s - %s' % (lounge_version(), extra))
 
 
@@ -89,4 +90,4 @@ def set_revision_as_version():
 
 def lounge_version():
     return subprocess.check_output(
-        ['thelounge.thelounge-cli', '--version']).decode('UTF-8').strip()
+        ['theloungeirc.thelounge-cli', '--version']).decode('UTF-8').strip()
