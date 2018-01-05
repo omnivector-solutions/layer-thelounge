@@ -3,7 +3,7 @@ This charm provides Lounge IRC, the self-hosted web IRC client.
 
 # Simple Deploy
 1. Deploy the charm!
-`juju deploy lounge-irc`
+`juju deploy thelounge`
 
 2. Add a user 
 `juju run-action lounge-irc/0 add-user name=myname password=mypassword`
@@ -32,11 +32,7 @@ juju run-action lounge-irc/0 remove-user name=myuser
 ```
 
 ## Authors
-* Marco Ceppi <marco@ceppi.net>
 * James Beedy <jamesbeedy@gmail.com>
 
-### License
-
-The MIT License (MIT) (see copyright file in this directory)
-
-Copyright (c) 2017 James Beedy <jamesbeedy@gmail.com>
+## Copyright
+* AGPLv3 (see `copyright` file for full text)

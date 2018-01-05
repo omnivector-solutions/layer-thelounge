@@ -1,4 +1,4 @@
-name: lounge-irc
+name: thelounge
 summary: The self-hosted web IRC client
 maintainer: James Beedy <jamesbeedy@gmail.com>
 description: |
@@ -8,5 +8,10 @@ tags:
 series:
   - xenial
 provides:
-  website:
+  http:
     interface: http
+resources:
+  theloungeirc:
+    type: file
+    filename: theloungeirc.snap
+    description: thelounge IRC snap
