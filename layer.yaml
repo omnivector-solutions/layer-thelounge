@@ -4,11 +4,6 @@ includes:
   - interface:http
 options:
   snap:
-    thelounge:
+    theloungeirc:
       channel: stable
-      devmode: false
-      jailmode: false
-      dangerous: true
-      classic: false
-      revision: null
 repo: "https://github.com/omnivector-solutions/layer-thelounge"
