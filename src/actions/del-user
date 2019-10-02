@@ -1,0 +1,20 @@
+#!/usr/local/sbin/charm-env python3
+from subprocess import PIPE, Popen
+from charmhelpers.core.hookenv import action_get
+
+
+if __name__ == "__main__":
+    username = action_get('username')
+
+    p = Popen(
+        [
+            "theloungeirc.thelounge-cli",
+            "remove",
+            username
+        ],
+        stdin=PIPE,
+        stdout=PIPE,
+        stderr=PIPE,
+        encoding='utf8'
+    )
+    p.stdin.communicate("{}\n".format(username))

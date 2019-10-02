@@ -24,13 +24,14 @@ from charmhelpers.core.templating import render
 
 
 LOUNGE_HOME = os.path.join(
-    '/', 'var', 'snap', 'theloungeirc', 'common', 'etc', 'thelounge')
+    '/', 'var', 'snap', 'theloungeirc', 'common', 'etc', 'thelounge'
+)
 
 
 @when('snap.installed.theloungeirc')
 @when_not('thelounge.available')
 def configure_thelounge():
-    status_set('maintenance', 'Configuring thelounge irc')
+    status_set('maintenance', 'Configuring theloungeirc')
 
     render(
         source='config.js.j2',
@@ -79,7 +80,8 @@ def close_lounge_port():
 
 @hook('update-status')
 def update():
-    extra = 'running' if host.service_running('snap.theloungeirc.thelounge') else 'stopped'
+    extra = 'running' if host.service_running(
+        'snap.theloungeirc.thelounge') else 'stopped'
     status_set('active', 'version %s - %s' % (lounge_version(), extra))
 
 

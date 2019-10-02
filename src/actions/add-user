@@ -1,0 +1,22 @@
+#!/usr/local/sbin/charm-env python3
+from subprocess import PIPE, Popen
+from charmhelpers.core.hookenv import action_get
+
+
+if __name__ == "__main__":
+    username = action_get('username')
+    password = action_get('password')
+
+    p = Popen(
+        [
+            "theloungeirc.thelounge-cli",
+            "add",
+            username
+        ],
+        stdin=PIPE,
+        stdout=PIPE,
+        stderr=PIPE,
+        encoding='utf8'
+    )
+    p.stdin.write("{}\n".format(password))
+    p.communicate("yes\n")

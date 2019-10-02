@@ -1,12 +1,13 @@
 name: thelounge
+display-name: thelounge
 summary: The self-hosted web IRC client
-maintainer: James Beedy <jamesbeedy@gmail.com>
+maintainer: Omnivector Solutions <admin@omnivector.solutions>
 description: |
   The Lounge is a modern web IRC client designed for self-hosting.
 tags:
   - irc
 series:
-  - xenial
+  - bionic
 provides:
   http:
     interface: http

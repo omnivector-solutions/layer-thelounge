@@ -1,1 +1,0 @@
-https://github.com/juju-solutions/charms.reactive/archive/master.tar.gz
