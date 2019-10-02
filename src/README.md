@@ -24,10 +24,10 @@ This charm ships with a few user management lifecycle actions:
 # Add User
 juju run-action lounge-irc/0 add-user username="myuser" password="mypassword"
 
-# List Users
+# Delete User
 juju run-action lounge-irc/0 del-user username="myuser"
 
-# Delete User
+# Reset Password
 juju run-action lounge-irc/0 reset-password username="myuser" password="mynewpassword"
 ```
 
