@@ -1,5 +1,5 @@
-# Lounge IRC
-This charm provides Lounge IRC, the self-hosted web IRC client.
+# TheLounge IRC
+This charm provides TheLounge IRC, the self-hosted web IRC client.
 
 # Simple Deploy
 1. Deploy the charm!
@@ -14,21 +14,21 @@ This charm provides Lounge IRC, the self-hosted web IRC client.
 # Deploy with reverse proxy
 ```bash
 juju deploy haproxy
-juju deploy lounge-irc
-juju relate lounge-irc haproxy
+juju deploy thelounge
+juju relate thelounge haproxy
 ```
 
 # User Lifecycle
 This charm ships with a few user management lifecycle actions:
 ```bash
 # Add User
-juju run-action lounge-irc/0 add-user username="myuser" password="mypassword"
+juju run-action thelounge/0 add-user username="myuser" password="mypassword"
 
 # Delete User
-juju run-action lounge-irc/0 del-user username="myuser"
+juju run-action thelounge/0 del-user username="myuser"
 
 # Reset Password
-juju run-action lounge-irc/0 reset-password username="myuser" password="mynewpassword"
+juju run-action thelounge/0 reset-password username="myuser" password="mynewpassword"
 ```
 
 ## Authors
