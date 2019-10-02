@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     p = Popen(
         [
-            "theloungeirc.thelounge-cli",
+            "/snap/bin/theloungeirc.thelounge-cli",
             "remove",
             username
         ],
@@ -17,4 +17,4 @@ if __name__ == "__main__":
         stderr=PIPE,
         encoding='utf8'
     )
-    p.stdin.communicate("{}\n".format(username))
+    p.communicate("{}\n".format(username))
